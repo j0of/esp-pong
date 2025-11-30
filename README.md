@@ -2,8 +2,9 @@
 Wireless 2-player pong using 2 ESP32s and the ESP-NOW protocol
 
 https://github.com/user-attachments/assets/b9c66c18-920a-4ca2-b1d6-fbd211c6f186
-<img width="1905" height="1428" alt="20251130_152803" src="https://github.com/user-attachments/assets/d127fb08-4079-49a9-9d78-4b7ae59cd2bc" />
-<img width="1982" height="1486" alt="20251130_151732" src="https://github.com/user-attachments/assets/4bec4abe-04a0-4720-a63f-de27be99d28e" />
+
+<img width=50% alt="20251130_152803" src="https://github.com/user-attachments/assets/d127fb08-4079-49a9-9d78-4b7ae59cd2bc" />
+<img width=50% alt="20251130_151732" src="https://github.com/user-attachments/assets/4bec4abe-04a0-4720-a63f-de27be99d28e" />
 
 ## Components
 - ESP-WROOM32 (2)
