@@ -16,7 +16,7 @@
 #define PIN_RIGHT 33
 
 // NOTE : REPLACE with the MAC Address shown in Player 2 console 
-uint8_t p2Address[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+static constexpr uint8_t p2Address[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
 
 /* ****************************************
     * NOTE : Ensure following values and definitions are consistent with Player 2 code
@@ -109,7 +109,8 @@ void onDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
     // Serial.print("Bytes received: ");
     // Serial.println(len);
  
-    p2x = p2State.p2x;
+    // Mirror Player 2 x pos
+    p2x = SCREEN_WIDTH - p2State.p2x - playerWidth;
     p2Served = p2State.p2Served;
 
     gamePaused = false;

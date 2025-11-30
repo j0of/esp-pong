@@ -15,7 +15,7 @@
 #define PIN_RIGHT 33
 
 // NOTE : REPLACE with the MAC address shown in Player 1 console
-uint8_t p1Address[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+static constexpr uint8_t p1Address[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
 
 /* ****************************************
     * NOTE : Ensure following values and definitions are consistent with Player 1 code
@@ -73,8 +73,8 @@ int p2Dir;
 int p2Points;
 bool p2Served;
 
-float ballX;
-float ballY;
+float ballX = (SCREEN_WIDTH - ballRadius) / 2;
+float ballY = (SCREEN_WIDTH - ballRadius) / 2;
 
 bool gamePaused = true;
 unsigned long lastPacketTime;
@@ -102,11 +102,12 @@ void onDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
     // Serial.print("Bytes received: ");
     // Serial.println(len);
  
-    p1x = gameState.p1x;
+    // Invert Player 1 x pos
+    p1x = SCREEN_WIDTH - gameState.p1x - playerWidth;
     p1Points = gameState.p1Points;
     p2Points = gameState.p2Points;
-    ballX = gameState.ballX;
-    // Invert ball's y pos on P2 screen
+    // Invert ball pos
+    ballX = SCREEN_WIDTH - gameState.ballX;
     ballY = SCREEN_HEIGHT - gameState.ballY;
     serve = gameState.serve;
 
@@ -125,6 +126,7 @@ void blink(void *pvParameters) {
 
 void setup() {
     Serial.begin(9600);
+    Serial.println("Hello, Player 2");
 
     pinMode(PIN_LEFT, INPUT_PULLUP);
     pinMode(PIN_RIGHT, INPUT_PULLUP);
@@ -148,7 +150,6 @@ void setup() {
 
     WiFi.mode(WIFI_STA);
 
-    Serial.println("Hello, world from Player 2!");
     Serial.print("My MAC address is : ");
     readMacAddress();
 
