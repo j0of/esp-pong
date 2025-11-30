@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/b9c66c18-920a-4ca2-b1d6-fbd211c6f186
 
 ## Components
 - ESP-WROOM32 (2)
-- 128x64 Monochrome I2C display (SSD1306)
+- 128x64 Monochrome I2C display (SSD1306) (2)
 - Push button (4)
 - 10k ohm resistor (4)
 
