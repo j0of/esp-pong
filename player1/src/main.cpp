@@ -27,7 +27,6 @@ static constexpr int playerWidth = 30;
 static constexpr int playerHeight = 2;
 static constexpr float playerSpeed = 3;
 
-static constexpr int ballSpeed = 3;
 static constexpr int ballRadius = 4;
 
 // (p1y and p2y will be swapped in Player 2 code)
@@ -66,6 +65,8 @@ const unsigned long timeoutMs = 2000;
 /* ****************************************
     * END
 **************************************** */
+
+static constexpr int ballSpeed = 3;
 
 int p1x = (SCREEN_WIDTH - playerWidth) / 2;
 int p1Dir;

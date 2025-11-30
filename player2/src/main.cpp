@@ -15,7 +15,7 @@
 #define PIN_RIGHT 33
 
 // NOTE : REPLACE with the MAC address shown in Player 1 console
-uint8_t p1Address[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+uint8_t p1Address[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 /* ****************************************
     * NOTE : Ensure following values and definitions are consistent with Player 1 code
@@ -28,8 +28,9 @@ static constexpr float playerSpeed = 3;
 
 static constexpr int ballRadius = 4;
 
+// (p1y and p2y will be swapped in Player 1 code)
 static constexpr int p1y = 5;
-static constexpr int p2y = 57;
+static constexpr int p2y = SCREEN_HEIGHT - playerHeight - 5;
 
 typedef struct _P2State {
     int p2x;
