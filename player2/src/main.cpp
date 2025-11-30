@@ -31,8 +31,6 @@ static constexpr int ballRadius = 4;
 static constexpr int p1y = 5;
 static constexpr int p2y = 57;
 
-
-
 typedef struct _P2State {
     int p2x;
     bool p2Served;
